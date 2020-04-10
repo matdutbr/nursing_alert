@@ -1,0 +1,42 @@
+<ion-header>
+        <ion-toolbar color="primary" class="titulo_center">
+                        <ion-grid>
+                            <ion-row>
+                              <ion-col class="texto_branco">
+                                  <ion-icon name="eye"></ion-icon> &nbsp;Vigilância Sugerida
+                              </ion-col>          
+                            </ion-row>
+                        </ion-grid> 
+             </ion-toolbar>             
+</ion-header>
+
+<ion-content padding class="getbackgropnd">
+    <ion-grid class="centraliza_leito">
+        <ion-row>
+          <ion-col>
+            Identificação: {{ provedor.leito.nome }}
+          </ion-col>          
+        </ion-row>
+    </ion-grid>   
+
+<ion-card [ngClass]="getScoreClass(provedor.consulta.score, provedor.consulta)">         
+  <ion-card-content text-center>
+      <p class="mensagem_center"> {{ getMensagem(provedor.consulta.score, provedor.consulta) }} </p>
+  </ion-card-content>    
+</ion-card>
+
+</ion-content>
+<ion-footer text-center>
+        <ion-buttons start>
+                <button ion-button type="submit" (click)="voltar($event)" round>
+                       <ion-icon name='arrow-back'></ion-icon>&nbsp;Voltar
+               </button>                       
+       </ion-buttons>     
+
+       <ion-buttons start text-center>         
+                <button ion-button type="submit" (click)="finalizar()" round>
+                        <ion-icon name="checkmark"></ion-icon>&nbsp; Finalizar Avaliação
+                </button>   
+        </ion-buttons>        
+       
+</ion-footer>

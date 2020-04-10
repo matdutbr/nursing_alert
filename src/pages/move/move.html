@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-toolbar color="primary" class="titulo_center">
+                <ion-grid>
+                    <ion-row>
+                      <ion-col class="texto_branco">
+                            <ion-icon name="log-in"></ion-icon> &nbsp; MOVE
+                      </ion-col>          
+                    </ion-row>
+                </ion-grid> 
+    </ion-toolbar>    
+</ion-header>
+
+<ion-content padding>
+
+        <ion-grid class="centraliza_leito">
+                <ion-row>
+                  <ion-col>
+                    Identificação: {{ provedor.leito.nome }}            
+                  </ion-col>          
+                </ion-row>
+        </ion-grid>      
+        <ion-card>         
+                <ion-card-content class="mensagem_controle">
+                    <p>Monitorizar → ECG, PA, FC e monitorização respiratória \n
+                     Instalar Oxigênio → somente se sat. O₂ < 90 - 94% em acordo com protocolo institucional, ou apenas avaliar oxigenação \n
+                     Puncionar Veia → 2 acessos venosos (cateter venoso 16 e 18 ) \n
+                     Examinar </p>
+                 </ion-card-content>    
+        </ion-card> 
+    
+</ion-content>
+<ion-footer text-center>
+    <ion-buttons start>    
+        <button ion-button type="submit" (click)="voltar()" round icon-start end>
+              <ion-icon name='arrow-back'></ion-icon> &nbsp;Voltar
+        </button>             
+    </ion-buttons>      
+</ion-footer>

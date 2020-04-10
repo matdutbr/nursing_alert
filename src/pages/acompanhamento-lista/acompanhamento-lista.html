@@ -1,0 +1,55 @@
+<ion-header>    
+        <ion-toolbar color="primary" class="titulo_center">
+                       <ion-grid>
+                            <ion-row>
+                              <ion-col class="texto_branco">
+                                    <ion-icon name="person">&nbsp;</ion-icon>&nbsp;Acompanhamentos
+                              </ion-col>          
+                            </ion-row>
+                        </ion-grid> 
+        </ion-toolbar>           
+</ion-header>
+<ion-content padding class="getbackgropnd">
+    <ion-grid class="centraliza_leito">
+        <ion-row>
+          <ion-col>
+            Identificação: {{ provedor.leito.nome }}           
+          </ion-col>          
+        </ion-row>
+</ion-grid>   
+<br/>
+    <ion-list *ngIf='leito.consultas.length == 0'>        
+        <ion-grid class="branco mensagem">            
+            Consulta não Cadastrada
+        </ion-grid>
+    </ion-list>          
+    <ion-list *ngIf='leito.consultas.length > 0'>
+        <ion-item-sliding>
+            <ion-item class="grid_titulo_lista">               
+                <ion-label class="datahora">Data / hora</ion-label>    
+                <ion-label text-center class="score_lista">Escore</ion-label>
+            </ion-item>
+        </ion-item-sliding>                    
+        <ion-item-sliding *ngFor="let consulta of leito.consultas">     
+              <ion-item class="grid_lista" (click)="consultar($event, consulta)">               
+                <ion-label class="datahora">{{ consulta.data | date:'dd/MM/yy HH:mm' }}</ion-label>              
+                <ion-label text-center class="score_lista" [ngClass]="getScoreClass(consulta.score, consulta)">{{ consulta.score }}</ion-label>
+              </ion-item>
+              <ion-item-options side="rigth">                
+                  <button ion-button color="danger" (click)="excluirConfirm(consulta)">Excluir</button>
+              </ion-item-options>                 
+          </ion-item-sliding>   
+      <!--  </button> -->        
+      </ion-list>              
+</ion-content>
+<ion-footer text-center>
+        <ion-buttons start>
+                <button ion-button type="submit" (click)="voltar($event)" round icon-start>
+                        <ion-icon name='arrow-back'></ion-icon> &nbsp;Voltar
+                </button>
+
+                <button ion-button (click)="incluir()" round end>
+                        <ion-icon name="heart"></ion-icon> &nbsp;Incluir
+                </button>                    
+        </ion-buttons>     
+</ion-footer>

@@ -1,0 +1,47 @@
+<ion-header>  
+        <ion-toolbar color="primary">
+                <ion-title class="titulo_center"><ion-icon name="people">&nbsp;</ion-icon>Identificação</ion-title>
+        </ion-toolbar>       
+</ion-header>
+<ion-content padding class="getbackgropnd">    
+    <ion-list *ngIf='leitos.length == 0'>        
+        <ion-grid class="branco mensagem">            
+            Identificação não Cadastrada
+        </ion-grid>
+    </ion-list>  
+    <ion-list *ngIf='leitos.length > 0'>
+        <ion-item-sliding>
+            <ion-item class="grid_titulo_lista">
+                <ion-label class='leito'>Ident</ion-label>
+                <ion-label class="datahora">Data / hora</ion-label>              
+                <ion-label class="score">Escore</ion-label>
+            </ion-item>
+        </ion-item-sliding>      
+        <ion-item-sliding *ngFor="let leito of leitos">         
+            <ion-item class="grid_lista" (click)="consultar($event, leito)">
+              <ion-label class='leito'>{{leito.nome}}</ion-label>
+              <ion-label class="datahora">{{ getData(leito) | date:'dd/MM/yy HH:mm' }}</ion-label>              
+              <ion-label text-center class="score" [ngClass]="getScoreClass(getScore(leito), leito)">{{ getScore(leito) }}</ion-label>
+            </ion-item>
+            <ion-item-options side="rigth">                
+                <button ion-button color="danger" (click)="excluirConfirm(leito)">Excluir</button>
+            </ion-item-options> 
+        </ion-item-sliding>              
+    <!--  </button> -->        
+    </ion-list>       
+   
+</ion-content>
+<ion-footer text-center>    
+
+        <ion-buttons start>         
+                <button ion-button (click)="chama_modal()" menuToggle round>
+                        <ion-icon name="person-add"></ion-icon> &nbsp;Incluir
+                </button>                  
+        </ion-buttons>  
+
+        <ion-toolbar color="primary">
+                <ion-searchbar class="texto_branco" placeholder="Procurar identificação" (ionInput)="getLeitos($event)"></ion-searchbar>
+        </ion-toolbar>
+        
+</ion-footer>  
+

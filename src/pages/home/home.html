@@ -1,0 +1,87 @@
+<ion-content padding class="home_titulo">    
+    <ion-item class="texto_titulo nopadding">
+        <ion-label color="dark">COREN  nº</ion-label>
+        <ion-input type="tel" maxlength="6" (keyup)="formatar()" pattern="[0-9]*" [(ngModel)]="container.coren" ></ion-input> 
+        <ion-select [(ngModel)]="container.estado" interface="popover">
+            <ion-option value="AC">Acre</ion-option>
+            <ion-option value="AL">Alagoas</ion-option>
+            <ion-option value="AP">Amapá</ion-option>
+            <ion-option value="AM">Amazonas</ion-option>
+            <ion-option value="BA">Bahia</ion-option>
+            <ion-option value="CE">Ceará</ion-option>
+            <ion-option value="DF">Distrito Federal</ion-option>
+            <ion-option value="ES">Espírito Santo</ion-option>
+            <ion-option value="GO">Goiás</ion-option>
+            <ion-option value="MA">Maranhão</ion-option>
+            <ion-option value="MT">Mato Grosso</ion-option>
+            <ion-option value="MS">Mato Grosso do Sul</ion-option>
+            <ion-option value="MG">Minas Gerais</ion-option>
+            <ion-option value="PA">Pará</ion-option>
+            <ion-option value="PB">Paraíba</ion-option>
+            <ion-option value="PR">Paraná</ion-option>
+            <ion-option value="PE">Pernambuco</ion-option>
+            <ion-option value="PI">Piauí</ion-option>
+            <ion-option value="RJ">Rio de Janeiro</ion-option>
+            <ion-option value="RN">Rio Grande do Norte</ion-option>
+            <ion-option value="RS">Rio Grande do Sul</ion-option>
+            <ion-option value="RO">Rondônia</ion-option>
+            <ion-option value="RR">Roraima</ion-option>
+            <ion-option value="SC">Santa Catarina</ion-option>
+            <ion-option value="SP">São Paulo</ion-option>
+            <ion-option value="SE">Sergipe</ion-option>
+            <ion-option value="TO">Tocantins</ion-option>
+        </ion-select>        
+    </ion-item>   
+    <!-- ion-grid text-center nopadding>           
+        <ion-row>                    
+          <ion-col class="centraliza_texto nopadding">            
+              <ion-item text-center class="coren_centralizado texto_titulo nopadding">   
+                  <ion-input type="tel" maxlength="6" (keyup)="formatar()" pattern="[0-9]*" [(ngModel)]="coren" (blur)="inclui_coren()"></ion-input>                     
+              </ion-item>                   
+          </ion-col>          
+        </ion-row>          
+    </ion-grid -->   
+    <br/>        
+    <ion-grid nopadding>           
+        <ion-row>
+          <ion-col text-center nopadding>
+             <ion-img class='imagem_home'></ion-img>    
+          </ion-col>
+        </ion-row>
+        <ion-row class="mensagem_home">
+            <ion-card>    
+                <ion-card-content>
+                    Este app tem por finalidade auxiliar ao enfermeiro na detecção precoce da deterioração clínica no adulto
+                </ion-card-content>      
+            </ion-card>     
+        </ion-row>          
+    </ion-grid>          
+    <ion-grid>  
+        <ion-row>
+            <ion-col text-center>
+              <ion-buttons start>         
+                <button ion-button id="iniciar" (click)="processo()" round [disabled]="validar_coren()">
+                        <ion-icon name="arrow-dropright">&nbsp;</ion-icon> iniciar              
+                </button>  
+            </ion-buttons>     
+          </ion-col>  
+        </ion-row>            
+    </ion-grid>  
+</ion-content>
+<ion-footer>
+   <ion-grid>
+      <ion-row>
+          <ion-col class="centraliza_texto branco">           
+              Financiamento:          
+          </ion-col>
+          <ion-col class="centraliza_texto branco">           
+                versão 1.6        
+            </ion-col>          
+      </ion-row>            
+     <ion-row>
+        <ion-col text-center nopadding>
+                <ion-img class='imagem_financiamentos'></ion-img>        
+        </ion-col>                  
+    </ion-row>
+   </ion-grid>
+</ion-footer>

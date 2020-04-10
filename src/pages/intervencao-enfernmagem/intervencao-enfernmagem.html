@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar color="primary" class="titulo_center">
+                <ion-grid>
+                    <ion-row>
+                      <ion-col class="texto_branco">
+                          <ion-icon name="hand"></ion-icon> &nbsp;Intervenções de Enfermagem
+                      </ion-col>          
+                    </ion-row>
+                </ion-grid> 
+     </ion-toolbar>   
+</ion-header>
+
+<ion-content padding class="getbackgropnd">
+    <ion-grid class="centraliza_leito">
+        <ion-row>
+          <ion-col>
+            Identificação: {{ provedor.leito.nome }}
+          </ion-col>          
+        </ion-row>
+    </ion-grid>   
+    
+      <ion-grid class="mensagem_controle branco">   
+        <ion-card [ngClass]="getCorFr(provedor.consulta)" *ngIf='getMensagemFr(provedor.consulta) != "" '>         
+          <ion-card-content>      
+              <p class="mensagem_center"> {{ getMensagemFr(provedor.consulta) }} </p>
+          </ion-card-content>    
+        </ion-card>
+        <ion-card [ngClass]="getCorTemp(provedor.consulta)" *ngIf='getMensagemTemp(provedor.consulta) != "" '>         
+          <ion-card-content>
+              <p class="mensagem_center"> {{ getMensagemTemp(provedor.consulta) }} </p>
+          </ion-card-content>    
+        </ion-card>
+        <ion-card [ngClass]="getCorPa(provedor.consulta)" *ngIf='getMensagemPA(provedor.consulta) != "" '>         
+          <ion-card-content>
+              <p class="mensagem_center"> {{ getMensagemPA(provedor.consulta) }} </p>
+          </ion-card-content>    
+        </ion-card>
+        <ion-card [ngClass]="getCorFc(provedor.consulta)" *ngIf='getMensagemFc(provedor.consulta) != "" '>         
+          <ion-card-content>
+              <p class="mensagem_center"> {{ getMensagemFc(provedor.consulta) }} </p>
+          </ion-card-content>    
+        </ion-card>
+        <ion-card [ngClass]="getCorNc(provedor.consulta)" *ngIf='getMensagemNc(provedor.consulta) != "" '>         
+          <ion-card-content>
+              <p class="mensagem_center"> {{ getMensagemNc(provedor.consulta) }} </p>
+          </ion-card-content>    
+        </ion-card>    
+        <ion-card *ngIf='this.fonte >= 10'>         
+            <ion-card-content>
+                <p class="mensagem_center"> Manter rotina do setor </p>
+            </ion-card-content>    
+        </ion-card>        
+    </ion-grid>    
+    <ion-card *ngIf="provedor.consulta.score > 0">   
+        <ion-title text-center>
+            <div class="fonte_baseada">Fonte</div>                   
+        </ion-title>       
+        <ion-card-content class="fonte_baseada">
+            baseado em NIC
+        </ion-card-content>    
+    </ion-card>            
+</ion-content>
+<ion-footer text-center>
+    <ion-buttons start>    
+        <button ion-button type="submit" (click)="voltar()" round icon-start end>
+            <ion-icon name='arrow-back'></ion-icon> &nbsp;Voltar
+        </button>      
+
+        <button ion-button type="submit" (click)="protocolo()" round>
+            <ion-icon name="thumbs-up"></ion-icon> &nbsp;Continuar
+        </button>   
+    </ion-buttons>      
+</ion-footer>

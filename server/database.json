@@ -1,0 +1,88 @@
+{
+  "Leitos": [
+    {
+      "id": 1,
+      "leito": "in",
+      "data": "Tue May 06 2008 19:25:38 GMT+0000 (UTC)",
+      "consultas": {
+        "data": "Thu Oct 06 1977 15:55:10 GMT+0000 (UTC)",
+        "score": 10,
+        "fr": 10,
+        "temp": 10,
+        "pa": 10,
+        "fc": 10,
+        "nc": "proident"
+      }
+    },
+    {
+      "id": 2,
+      "leito": "cupidatat",
+      "data": "Mon May 13 2019 15:37:55 GMT+0000 (UTC)",
+      "consultas": {
+        "data": "Fri Apr 18 2003 06:24:04 GMT+0000 (UTC)",
+        "score": 10,
+        "fr": 10,
+        "temp": 10,
+        "pa": 10,
+        "fc": 10,
+        "nc": "id"
+      }
+    },
+    {
+      "id": 3,
+      "leito": "incididunt",
+      "data": "Mon Nov 26 1990 10:29:00 GMT+0000 (UTC)",
+      "consultas": {
+        "data": "Tue Jun 03 1980 00:55:02 GMT+0000 (UTC)",
+        "score": 10,
+        "fr": 10,
+        "temp": 10,
+        "pa": 10,
+        "fc": 10,
+        "nc": "dolor"
+      }
+    },
+    {
+      "id": 4,
+      "leito": "exercitation",
+      "data": "Wed Dec 26 1990 15:03:00 GMT+0000 (UTC)",
+      "consultas": {
+        "data": "Mon Nov 12 2001 19:37:03 GMT+0000 (UTC)",
+        "score": 10,
+        "fr": 10,
+        "temp": 10,
+        "pa": 10,
+        "fc": 10,
+        "nc": "occaecat"
+      }
+    },
+    {
+      "id": 5,
+      "leito": "amet",
+      "data": "Fri Jan 01 1993 00:17:28 GMT+0000 (UTC)",
+      "consultas": {
+        "data": "Sun Apr 08 2001 15:05:58 GMT+0000 (UTC)",
+        "score": 10,
+        "fr": 10,
+        "temp": 10,
+        "pa": 10,
+        "fc": 10,
+        "nc": "magna"
+      }
+    },
+    {
+      "id": 6,
+      "leito": "non",
+      "data": "Sat Apr 06 1974 11:35:36 GMT+0000 (UTC)",
+      "consultas": {
+        "data": "Thu Jul 25 1996 05:36:41 GMT+0000 (UTC)",
+        "score": 10,
+        "fr": 10,
+        "temp": 10,
+        "pa": 10,
+        "fc": 10,
+        "nc": "aliquip"
+      }
+    }
+  ]
+}

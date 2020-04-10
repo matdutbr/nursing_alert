@@ -1,0 +1,112 @@
+<ion-header>
+                <ion-toolbar color="primary" class="titulo_center">
+                                        <ion-grid>
+                                            <ion-row>
+                                              <ion-col class="texto_branco">
+                                                        <ion-icon name="create"></ion-icon> &nbsp;Escore
+                                              </ion-col>          
+                                            </ion-row>
+                                        </ion-grid> 
+                </ion-toolbar>          
+</ion-header>
+<ion-content padding class="getbackgropnd">
+        <ion-grid class="centraliza_leito">
+                <ion-row>
+                  <ion-col>
+                        Identificação: {{ provedor.leito.nome }}
+                  </ion-col>          
+                </ion-row>
+        </ion-grid>
+        <br/>           
+        <ion-grid>          
+                        <ion-row align-items-start class="grid_titulo_lista">
+                                        <ion-col col-9>
+                                          <div> Parâmetros </div>                                    
+                                        </ion-col>
+                                        <ion-col align-self-center>
+                                          <div>  </div>                                      
+                                        </ion-col>
+                                      </ion-row>  
+                                      <br/>      
+
+                <ion-row align-items-start>
+                  <ion-col col-4 class="titulo_sinais">
+                     FR 
+                  </ion-col>
+                  <ion-col col-5 align-self-center>
+                     <div> {{ consulta.fr }}  </div>                                    
+                  </ion-col>
+                  <ion-col align-self-center class="titulo_sinais">
+                     rpm
+                  </ion-col>
+                </ion-row>  
+                <br/>             
+                <ion-row>
+                    <ion-col col-4 class="titulo_sinais">
+                        Tax
+                    </ion-col>
+                    <ion-col col-5 align-self-center>
+                                <div> {{ consulta.temp }}  </div>                                    
+                    </ion-col>
+                    <ion-col align-self-center class="titulo_sinais">
+                               ºC 
+                    </ion-col>                     
+                </ion-row>   
+                <br/>             
+                <ion-row>
+                        <ion-col col-4 class="titulo_sinais">
+                                PAsist
+                        </ion-col>
+                        <ion-col col-5 align-self-center>
+                                    <div> {{ consulta.pasist }}  </div>                                    
+                        </ion-col>
+                        <ion-col align-self-center class="titulo_sinais">
+                                   mmHg 
+                        </ion-col>                        
+                </ion-row>   
+                <br/>             
+                <ion-row>
+                        <ion-col col-4 class="titulo_sinais">
+                                FC 
+                        </ion-col>
+                        <ion-col col-5 align-self-center>
+                                    <div> {{ consulta.fc }}  </div>                                    
+                        </ion-col>
+                        <ion-col align-self-center class="titulo_sinais">
+                                bmp 
+                        </ion-col>                       
+                </ion-row>  
+                <br/>             
+                <ion-row>
+                        <ion-col col-4 class="titulo_sinais">
+                                Nivel Consc 
+                        </ion-col>
+                        <ion-col col-5 align-self-center>
+                                    <div> {{ consulta.nc }}  </div>                                    
+                        </ion-col>
+                        <ion-col align-self-center>
+                                   <div>  </div>                                      
+                        </ion-col>                      
+                </ion-row>  
+                <br/>    
+
+                <ion-row align-items-start>
+                                <ion-col col-9 class="sinais_score_total">
+                                  <div> Escore Total </div>                                    
+                                </ion-col>
+                                <ion-col align-self-center [ngClass]="getScoreClass(consulta.score)" texto-center>
+                                  <div class="sinais_score_valor"> {{ consulta.score }} </div>                                      
+                                </ion-col>
+                              </ion-row>       
+                </ion-grid>                 
+</ion-content>
+<ion-footer text-center>
+                <ion-buttons start text-center>         
+                                <button ion-button type="submit" (click)="voltar($event)" round icon-start>
+                                        <ion-icon name='arrow-back'></ion-icon> &nbsp;Voltar
+                                </button>
+                                <button ion-button type="submit" (click)="acao()" round end>
+                                           <ion-icon name="walk"></ion-icon> &nbsp;Ações
+                                </button>            
+                </ion-buttons>        
+</ion-footer>

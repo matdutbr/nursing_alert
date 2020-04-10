@@ -1,0 +1,71 @@
+page-sinais-vitais {
+ 
+ // ion-grid > ion-row > ion-col {
+
+  //  size: 1;
+
+ // }
+
+  ion-col {
+    padding: 0px;   
+  }
+
+  ion-select {
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .text-input-md {
+    margin: 6px 8px !important;
+    padding: 0px !important;
+    width: calc(100% - 8px - 8px);
+    top: 2px;
+  }
+  
+  input[type=text] {  
+     border: none;
+  }     
+ // input[type=text] {  
+    //background: white; 
+    //border:1px solid #000000;
+    //width:50px
+  //}  
+
+  .valores_input {    
+    margin: 6px 8px !important;
+    padding: 0px !important;
+  }
+
+ // select {
+  //  width: 20px;
+    /*margin-top: 15px !important;*/
+ //   margin-top: 5px !important;
+ //   padding: 0px !important;
+ //   height: 37px;
+ // }
+
+  .nogrow {
+    flex-grow: 0;
+  }
+  .align-items-flex-end {
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+  }
+
+  .nopadding {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+
+}
+
+.text-input {
+  text-align: center;
+}
+.input {
+  border-radius: 5px!important
+}
+
+
+

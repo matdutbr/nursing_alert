@@ -1,0 +1,24 @@
+<ion-header>
+        <ion-toolbar color="primary">
+                <ion-title class="titulo_center">Informe a Identificação</ion-title>
+        </ion-toolbar>           
+</ion-header>
+<ion-content padding>
+
+        <ion-item>
+            <ion-label position="stacked">Ident: </ion-label>
+            <ion-input required type="text" [(ngModel)]="novo_leito" name="leito_text"></ion-input>        
+        </ion-item>
+
+</ion-content>
+<ion-footer text-center>
+    <ion-buttons start>    
+        <button ion-button type="submit" (click)="voltar()" round icon-start end>
+            <ion-icon name='arrow-back'></ion-icon> &nbsp;Voltar
+        </button>            
+
+        <button ion-button (click)="incluir($event)" round>
+            <ion-icon name="person-add"></ion-icon> &nbsp;Incluir
+        </button>  
+    </ion-buttons>      
+</ion-footer>

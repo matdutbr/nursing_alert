@@ -1,0 +1,67 @@
+<ion-header>
+        <ion-toolbar color="primary" class="titulo_center">
+                        <ion-grid>
+                            <ion-row>
+                              <ion-col class="texto_branco">
+                                    <ion-icon name="contract"></ion-icon> &nbsp;Ações Escore
+                              </ion-col>          
+                            </ion-row>
+                        </ion-grid> 
+        </ion-toolbar>           
+</ion-header>
+
+<ion-content padding class="getbackgropnd">
+    <ion-grid class="centraliza_leito">
+        <ion-row>
+          <ion-col>
+            Identificação: {{ provedor.leito.nome }}            
+          </ion-col>          
+        </ion-row>
+    </ion-grid>   
+    <ion-grid class="branco">         
+        <div *ngIf="mensagemscore(provedor.consulta.score) != null"> 
+            <ion-card [ngClass]="getScoreClass(provedor.consulta.score, provedor.consulta)"> 
+                <ion-card-content>
+                   <p class="mensagem_center">{{mensagemscore(provedor.consulta.score, provedor.consulta)}} </p>
+               </ion-card-content>    
+            </ion-card>          
+        </div>           
+        <div *ngIf="this.provedor.consulta.score >= 7">
+                <ion-buttons start text-center>
+                        <button ion-button (click)="protocoloPCR()" round>
+                            <ion-icon name="analytics"></ion-icon>&nbsp;PCR
+                        </button> 
+
+                        <button ion-button (click)="Move()" round end>
+                                <ion-icon name="log-in"></ion-icon> &nbsp;MOVE
+                        </button> 
+                </ion-buttons>                              
+        </div>
+        
+        <div *ngIf="this.provedor.consulta.score >= 7"> 
+                <ion-card *ngIf="provedor.consulta.score > 0">       
+                        <ion-title text-center>
+                          <div class="fonte_baseada">Fonte</div>                   
+                        </ion-title>     
+                          <ion-card-content class="fonte_baseada">
+                                baseado em MEWS
+                          </ion-card-content>    
+                </ion-card>               
+        </div>                         
+    </ion-grid>               
+</ion-content>
+<ion-footer text-center>
+        <ion-buttons start>                
+                <button ion-button type="submit" (click)="voltar($event)" round icon-start end>
+                        <ion-icon name='arrow-back'></ion-icon> &nbsp;Voltar
+                </button>   
+
+                <!-- button ion-button type="submit" (click)="reavaliar()" round>
+                        <ion-icon name="thermometer"></ion-icon> &nbsp;Reavaliar
+                </!-->
+
+                <button ion-button type="submit" (click)="diagnosticos()" round>
+                        <ion-icon name="thumbs-up"></ion-icon> &nbsp;Continuar
+                </button>                 
+        </ion-buttons>              
+</ion-footer>

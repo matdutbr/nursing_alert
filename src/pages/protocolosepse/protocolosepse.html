@@ -1,0 +1,59 @@
+<ion-header>
+        <ion-toolbar color="primary" class="titulo_center">
+                        <ion-grid>
+                            <ion-row>
+                              <ion-col class="texto_branco">
+                                    <ion-icon name="git-network"></ion-icon>&nbsp;  Protocolo de SEPSE
+                              </ion-col>          
+                            </ion-row>
+                        </ion-grid> 
+            </ion-toolbar>               
+</ion-header>
+<ion-content padding>
+    
+        <ion-grid class="centraliza_leito">
+                <ion-row>
+                  <ion-col>
+                    Identificação: {{ provedor.leito.nome }}            
+                  </ion-col>          
+                </ion-row>
+        </ion-grid>      
+    <ion-card>         
+        <ion-card-content>
+           <p class="mensagem_center titulo_protocolo_menor">Presença de uma dessas alterações, 
+            sem outra explicação plausível e com foco infeccioso presumível.</p>					
+         </ion-card-content>    
+    </ion-card> 
+
+    <ion-card>         
+            <ion-card-content>
+                <p class="titulo_left titulo_protocolo_menor">hipotensão (PAS < 90 mmHg ou PAM < 65 mmHg ou queda de PA > 40 mmHg)
+                    * oligúria (≤ 0,5 mL/Kg/h) ou elevação da creatina (> 2 mg/dL);
+                    * relação PaO₂/FiO₂ < 300 ou necessidade de 0₂ para manter SpO₂ > 90%;
+                    * contagem de plaquetas < 100.000/mm₃ ou redução de 50% no número de plaquetas em relação ao maior valor registrado nos últimos 3 dias;
+                    * lactato acima do valor de referência;
+                    * rebaixamento do nível de conciência, agitação, delirium;
+                    * aumento significativo de bilirrubinas
+                    (> 2X o valor de referência ).                    
+                </p>					
+            </ion-card-content> 
+    </ion-card> 
+
+    <ion-card>   
+        <ion-title text-center>
+                    <div class="fonte_baseada">Fonte</div>                   
+        </ion-title>       
+        <ion-card-content class="fonte_baseada">
+            Instituto latino Amaricano de sepse, 2018
+        </ion-card-content>    
+    </ion-card>       
+
+</ion-content>
+<ion-footer text-center>
+        <ion-buttons start>    
+            <button ion-button type="submit" (click)="voltar()" round icon-start end>
+                  <ion-icon name='arrow-back'></ion-icon> &nbsp;Voltar
+            </button>             
+        </ion-buttons>      
+</ion-footer>
+    
